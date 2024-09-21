@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_press_app/components/background.dart';
-import 'package:flutter_press_app/components/login_form.dart';
-import 'package:flutter_press_app/components/login_screen_top_image.dart';
+import 'package:flutter_press_app/screens/components/login_form.dart';
+import 'package:flutter_press_app/screens/components/login_screen_top_image.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key:key);
