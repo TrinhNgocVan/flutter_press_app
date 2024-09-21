@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_press_app/lab/keys/lab1.dart';
 import 'package:flutter_press_app/screens/login/login_screen.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home: PositionedKey(),
     );
   }
 }

@@ -1,15 +1,9 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_press_app/common/constants.dart';
 import 'package:flutter_press_app/components/already_have_account.dart';
 import 'package:flutter_press_app/screens/dashboard.dart';
 import 'package:flutter_press_app/screens/login/login_screen.dart';
 import 'package:flutter_press_app/services/user_service.dart';
-import 'package:http/http.dart' as http;
-
-
 
 TextEditingController emailController  = TextEditingController();
 TextEditingController passwordController  = TextEditingController();
