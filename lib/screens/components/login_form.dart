@@ -10,10 +10,12 @@ TextEditingController passwordController  = TextEditingController();
 
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+  LoginForm({super.key});
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           TextFormField(
@@ -22,6 +24,12 @@ class LoginForm extends StatelessWidget {
             cursorColor: kPrimaryColor,
             onSaved: (email) {},
             controller: emailController,
+            validator: (value){
+              if(value == null  || value.isEmpty){
+                return  'Please enter some text';
+              }
+              return null;
+            },
             decoration: const InputDecoration(
               hintText: "Your email",
               prefixIcon: Padding(
@@ -34,6 +42,12 @@ class LoginForm extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
               controller: passwordController,
+              validator: (value){
+                if(value == null  || value.isEmpty){
+                  return  'Please enter some text';
+                }
+                return null;
+              },
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
@@ -49,17 +63,19 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           ElevatedButton(
             onPressed: () async {
-              bool loginSuccess = await login(emailController.text.toString()
-                ,passwordController.text.toString());
-              if(loginSuccess){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const Dashboard();
-                    },
-                  ),
-                );
+              if(_formKey.currentState!.validate()){
+                bool loginSuccess = await login(emailController.text.toString()
+                    ,passwordController.text.toString());
+                if(loginSuccess){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const Dashboard();
+                      },
+                    ),
+                  );
+                }
               }
             },
             child: Text(
@@ -73,7 +89,7 @@ class LoginForm extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const LoginScreen();
+                    return  LoginScreen();
                   },
                 ),
               );

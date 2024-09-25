@@ -4,6 +4,8 @@ Key : preserve state when widget move around in widget tree .
   - When you need key
   - where put them in widget tree
   - which is right for you
+ TODO : cac loai key trong flutter
+ 1.  
  */
 
 import 'package:flutter/material.dart';

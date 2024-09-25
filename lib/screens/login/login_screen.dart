@@ -6,7 +6,7 @@ import 'package:flutter_press_app/screens/components/login_form.dart';
 import 'package:flutter_press_app/screens/components/login_screen_top_image.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key:key);
+   LoginScreen({Key? key}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +25,18 @@ class MobileLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        LoginScreenTopImage(),
+        const LoginScreenTopImage(),
         Row(
           children: [
-            Spacer(), // khoang trong co the dieu chinh duoc
+            const Spacer(), // khoang trong co the dieu chinh duoc
             Expanded( // giup mo rong khong gian cua widget con
               flex: 8, // ty le phan bo khong gian
               child: LoginForm(),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ],
